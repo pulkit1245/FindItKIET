@@ -1,9 +1,13 @@
 
-const API_URL = 'http://localhost:3000/api/v1';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
+const API_URL = process.env.API_URL || 'http://localhost:8000/api/v1';
 const USER = {
-    name: 'Pulkit Verma',
-    email: 'pulkitverma2008@gmail.com',
-    password: '123456'
+    name: process.env.SEED_USER_NAME || 'Test User',
+    email: process.env.SEED_USER_EMAIL || 'test@example.com',
+    password: process.env.SEED_USER_PASSWORD || 'password123'
 };
 
 const ITEMS_TO_CREATE = 15;

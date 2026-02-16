@@ -1,8 +1,11 @@
 
 import { PrismaClient } from '@prisma/client';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const prisma = new PrismaClient();
-const TARGET_EMAIL = 'pulkitverma2008@gmail.com';
+const TARGET_EMAIL = process.env.TARGET_EMAIL || 'user@example.com';
 
 async function issueCertificate() {
     try {
